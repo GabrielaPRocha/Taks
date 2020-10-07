@@ -1,0 +1,31 @@
+form{
+display: flex;
+flex-direction: column;
+ position: flex;
+margin-top: 3rem;
+margin-left:6rem;
+width: 200px;
+height:100px;
+
+}
+.form input[type="text"],textarea, button {
+    outline:none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    padding: 1rem;
+    margin:1rem;
+    border:none;
+    box-shadow: inset -4px -4px 8px rgba(230, 13, 114, 0.842),
+                inset 4px 4px 8px rgba(230, 13, 114, 0.842);
+    border-radius:10px;
+}
+.form textarea{
+    resize: vertical;
+    max-height: 7rem;
+}
+.form button{
+    box-shadow: -2px -2px 6px rgba(230, 13, 114, 0.842);
+    border-radius: 10px;
+    color: brown;
+    cursor:pointer;
+}
