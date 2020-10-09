@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component} from 'react';
 class Projects extends Component{
     state= {  }
     handleKeyPress(e){
@@ -7,7 +7,7 @@ class Projects extends Component{
        e.target.value = ""
     }
 }
-handeleClick(e){
+handleClick(e){
     this.props.filter(e.target.innerHTML)
 }
     render(){
