@@ -1,4 +1,5 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+
 import './style.css'
 
 class Form extends Component {
@@ -8,7 +9,7 @@ class Form extends Component {
             title: "",
             sinopsys:"",
             status:0,
-            project:""
+            project: ""
         };
     }
     handleChangeTitle(event){
@@ -22,7 +23,7 @@ class Form extends Component {
        }
        handleSubmit(event){
         event.preventDefault()
-      this.props.addTask(this.state)
+        this.props.addTask(this.state)
 }
     render() { 
         return (
@@ -32,7 +33,10 @@ class Form extends Component {
                   onChange={this.handleChangeTitle.bind(this)}
                   />
                 <textarea placeholder="Sinopse" onChange={this.handleChangeSinopsys.bind(this)}/>
-                <select   onChange={this.handleChangeProject.bind(this)}>{this.props.projects.map(project =><option>{project.name}</option>)}</select>
+                <select 
+                 onChange={this.handleChangeProject.bind(this)}>
+                {this.props.projects.map(project =><option>{project.name}</option>)}
+                </select>
                 <button className="btn-bg">Salvar</button>
                 </form>
           );

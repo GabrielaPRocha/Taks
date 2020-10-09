@@ -9,11 +9,11 @@ export default class Task extends Component{
     render(){
         return(
             <div className="cardTask">
-                <h2>{this.props.title}</h2>
-                <p>{this.props.sinopsys}</p>
+                <h2>{this.props.task.title}</h2>
+                <p>{this.props.task.sinopsys}</p>
                 <div className="status">
-                    <span style={{width: this.props.status +'%'}}></span>
-                    </div>
+                    <span style={{width: this.props.task.status +'%'}}></span>
+                </div>
                 <div className="task-actions">
                 <button className="btn-sm btn" onClick={this.increment.bind(this)}>
                 <span className="material-icons">add</span>
@@ -27,6 +27,7 @@ export default class Task extends Component{
                 <span className="material-icons">delete</span>
                 </button>
                 </div>
+                <p>{this.props.task.project}</p>
             </div>
         );
 

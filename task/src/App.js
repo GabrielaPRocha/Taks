@@ -14,6 +14,7 @@ class App extends Component {
        {name: 'Indicaçoes'},
        {name: 'Terminados'},
     ],
+    filter:''
 }
 }
 
@@ -21,7 +22,7 @@ addTask(task){
     this.setState({tasks: [...this.state.tasks, task]})
    }
    addProject(project){
-      this.setState({projects: [...this.state.tasks, project]})
+      this.setState({projects: [...this.state.projects, project]})
      }
 deleteTask(index){
    let newTasks = this.state.tasks
@@ -44,18 +45,26 @@ decrement(index){
    newTasks.splice(index,1, task)
    this.setState({tasks: newTasks})
 }
+filter(project){
+this.setState({filter: project})
+}
   render(){
     return (
         <div className="container">
          <section>
             <h1>GabzBooks</h1>
             <Form addTask = {this.addTask.bind(this)}
-             projects={this.state.projects}/>
-            <Projects projects={this.state.projects}
-            addProject={this.addProject.bind(this)}/> 
+            projects={this.state.projects}/>
+            <Projects
+             projects={this.state.projects}
+            addProject={this.addProject.bind(this)}
+            filter={this.filter.bind(this)}
+            /> 
          </section>
-         <section>
-        {this.state.tasks.map((task, index) =>(
+         <section className="tasks">
+        {this.state.tasks
+        .filter(task => task.project === this.state.filter)
+        .map((task, index) => (
         <Task
         key={index}
         index={index}
