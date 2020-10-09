@@ -15,7 +15,8 @@ handeleClick(e){
             <>
         <h3>Biblioteca</h3>
         <ul>
-            {this.props.projects.map(project =><li onClick={this.handdleClick.bind(this)}>{project.name}</li>)}
+            {this.props.projects.map(project =>
+            <li onClick={this.handleClick.bind(this)}>{project.name}</li>)}
         </ul>
             <input type="text" placeholder="adicionar projeto" onKeyPress={this.handleKeyPress.bind(this)}/>
             </>
