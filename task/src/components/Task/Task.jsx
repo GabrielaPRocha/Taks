@@ -1,11 +1,9 @@
 import React,{Component} from 'react'
 import './style.css'
 export default class Task extends Component{
-   deleteTask(){
-       this.props.deleteTask(this.props.index)
-   }
-   increment(){this.props.increment(this.props.index)}
-   decrement(){this.props.decrement(this.props.index)}
+   deleteTask(){this.props.deleteTask(this.props.task.id)}
+   increment(){this.props.increment(this.props.task.id)}
+   decrement(){this.props.decrement(this.props.task.id)}
     render(){
         return(
             <div className="cardTask">

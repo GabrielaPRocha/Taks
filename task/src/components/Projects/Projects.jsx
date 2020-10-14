@@ -8,15 +8,18 @@ class Projects extends Component{
     }
 }
 handleClick(e){
-    this.props.filter(e.target.innerHTML)
+    let project = e.target.innerHTML
+    if(project ==='(todos)') project = ''
+    this.props.filter(project)
 }
     render(){
         return( 
             <>
         <h3>Biblioteca</h3>
         <ul>
+            <li onClick={this.handleClick.bind(this)}>(todos)</li>
             {this.props.projects.map(project =>
-            <li onClick={this.handleClick.bind(this)}>{project.name}</li>)}
+            <li key={project.name} onClick={this.handleClick.bind(this)}>{project.name}</li>)}
         </ul>
             <input type="text" placeholder="adicionar projeto" onKeyPress={this.handleKeyPress.bind(this)}/>
             </>

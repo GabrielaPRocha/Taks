@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Task from './components/Task/Task.jsx';
-import Form from './components/Form/Form.jsx';
+import Task from './components/Task/TaskFunc.jsx';
+import Form from './components/Form/FormFunc.jsx';
 import Projects from "./components/Projects/Projects";
 import './App.css';
 
@@ -19,29 +19,33 @@ class App extends Component {
 }
 
 addTask(task){
-    this.setState({tasks: [...this.state.tasks, task]})
+   task.id = Date.now() 
+   this.setState({tasks: [...this.state.tasks, task]})
    }
    addProject(project){
       this.setState({projects: [...this.state.projects, project]})
      }
-deleteTask(index){
+deleteTask(id){
    let newTasks = this.state.tasks
+   const index = newTasks.findIndex(task => task.id === id)
    newTasks.splice(index,1)
    this.setState({tasks: newTasks})
 }   
-increment(index){
-   let task = this.state.tasks[index]
+increment(id){
+   let newTasks = this.state.tasks
+   const index = newTasks.findIndex(task => task.id === id)
+   let task = newTasks[index]
    task.status += 5  
    if(task.status >100) task.status = 100
-   let newTasks = this.state.tasks
    newTasks.splice(index,1, task)
    this.setState({tasks: newTasks})
 }
-decrement(index){
-   let task = this.state.tasks[index]
+decrement(id){
+   let newTasks = this.state.tasks
+   const index = newTasks.findIndex(task => task.id === id)
+   let task = newTasks[index]
    task.status -= 5  
    if(task.status <0) task.status =0
-   let newTasks = this.state.tasks
    newTasks.splice(index,1, task)
    this.setState({tasks: newTasks})
 }
@@ -63,11 +67,12 @@ this.setState({filter: project})
          </section>
          <section className="tasks">
         {this.state.tasks
-        .filter(task => task.project === this.state.filter)
-        .map((task, index) => (
+        .filter(
+           task =>
+            task.project === this.state.filter || this.state.filter ==='')
+        .map((task) => (
         <Task
-        key={index}
-        index={index}
+        key={task.id}
         task={task}
         deleteTask={this.deleteTask.bind(this)}
         increment={this.increment.bind(this)}
