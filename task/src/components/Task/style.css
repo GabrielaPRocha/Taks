@@ -1,9 +1,11 @@
 .cardTask{
     padding:0px 15px 10px; 
-   /*background: #2C302D;
-    border: 2px solid #000000;*/
-    box-shadow: -2px -2px 6px  rgba(235, 3, 104, 0.788),
-              -2px -2px 6px rgba(235, 3, 104, 0.788)  ;
+   background: #2C302D;
+    /*border: 2px solid #000000;*/
+    box-shadow: -8px -8px 10px  rgb(0, 0, 0),
+               -8px -8px 10px   rgb(0, 0, 0);
+    /*-2px -2px 6px  rgba(235, 3, 104, 0.788),
+              -2px -2px 6px rgba(235, 3, 104, 0.788)  ;*/
     border-radius: 10px;
     margin:1rem;
     display:flex;
@@ -18,9 +20,9 @@
 .status span{
     height: 100%;
     display: block;
-    background-color: #fff;
+    background-color: rgba(233, 6, 93, 0.788);
     box-shadow: -2px -2px 6px  rgba(101,101,104, 0.788),
-    -2px -2px 6px rgba(101,101, 104, 0.788);
+    -2px -2px 6px  rgba(101,101,104, 0.788);
     border-radius: 5px; 
 }
 .task-actions{
@@ -29,7 +31,7 @@
 h2{
 font-family: 'Times New Roman', Times, serif;
 font-size: 25px;
-color: #DB5F75;
+color: #ff002f;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 p{

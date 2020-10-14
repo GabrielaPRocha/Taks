@@ -3,10 +3,19 @@ display:grid;
 flex-direction: column;
  /*position: flex;*/
 margin-top: 5rem;
-margin-left:6rem;
+margin-left:2rem;
 width: 410px;
 height:310px;
-
+}
+select{
+    background-color: transparent;
+    padding: .5rem;
+    margin:.5rem;
+    cursor:pointer;
+    border:none;
+    box-shadow: -6px -6px 10px rgba(0, 0, 0),
+    -6px -6px 10px rgba(0, 0, 0);
+    border-radius:20px;
 }
 .form input[type="text"],textarea, button {
     outline:none;
@@ -15,8 +24,8 @@ height:310px;
     padding: 1rem;
     margin:1rem;
     border:none;
-    box-shadow: inset -4px -4px 8px rgba(230, 13, 114, 0.842),
-                inset 4px 4px 8px rgba(230, 13, 114, 0.842);
+    box-shadow: -6px -6px 10px rgba(0, 0, 0),
+                -6px -6px 10px rgba(0, 0, 0);
     border-radius:10px;
 }
 .form textarea{
@@ -24,7 +33,7 @@ height:310px;
     max-height: 7rem;
 }
 .form button{
-    box-shadow: -2px -2px 6px rgba(230, 13, 114, 0.842);
+    box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.842);
     border-radius: 10px;
     color: brown;
     cursor:pointer;
