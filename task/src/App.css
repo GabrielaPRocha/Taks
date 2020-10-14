@@ -3,8 +3,8 @@ background:grey ;
 /*#b82c6d; tom mais claro:#fcfcfc; */
 }
 .container{
-    display: grid;
-    grid-template-columns:1fr;
+    display: row;
+    grid-template-columns: auto 3fr;
 
 }
 li{
@@ -36,7 +36,7 @@ h3{
     height:36px;
     border-radius:18px;
     box-shadow: -2px -2px 6px rgba(2,1,1, 0.25),
-    -2px -2px 6px rgba(2, 1, 1, 0.25);
+                -2px -2px 6px rgba(2, 1, 1, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;                                                                              
@@ -49,23 +49,24 @@ h3{
     color: rgb(125, 125, 125);
 }
 .btn-danger:hover span{
-    text-shadow:0px 0px 5px #720303,
-    0px 0px 5px #720303;
+    text-shadow:0px 0px 5px #970707,
+                0px 0px 5px #970707;
 
 }
 @media (max-width: 1200px){
     .tasks{
+        display:grid;
       grid-template-columns: repeat(2,1fr);
     }
 }
 @media (max-width: 900px){
     .tasks{
+        display:grid;
       grid-template-columns: 1fr;
     }
 }
 @media (max-width: 700px){
     .container{
-        display: grid;
         grid-template-columns:1fr;
     }
 }
