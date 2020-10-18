@@ -16,6 +16,12 @@ class App extends Component {
     ],
     filter:''
 }
+   fetch("http://localhost:8000/livro")
+   .then((resposta)=>{
+      resposta.json().then((tarefas)=>{
+         console.log(tarefas)
+      })
+   });
 }
 
 addTask(task){
