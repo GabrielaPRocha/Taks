@@ -18,8 +18,8 @@ class App extends Component {
 }
    fetch("http://localhost:8000/livro")
    .then((resposta)=>{
-      resposta.json().then((tarefas)=>{
-         console.log(tarefas)
+      resposta.json().then((livros)=>{
+         this.setState({livros: livros})
       })
    });
 }
